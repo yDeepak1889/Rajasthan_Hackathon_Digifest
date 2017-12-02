@@ -28,7 +28,7 @@ class BaseHandler(webapp2.RequestHandler):
 
 db = MySQLdb.connect(host="localhost",
                      user="root",
-                     passwd="codebuildhack",
+                     passwd="dewan123",
                      db="digifest")
 cs = db.cursor()
 
@@ -105,6 +105,6 @@ app = webapp2.WSGIApplication([
 
 def main():
 	from paste import httpserver
-	httpserver.serve(app, host = '172.19.92.234', port = '8080')
+	httpserver.serve(app, host = '139.59.26.15', port = '8080')
 
 main()
