@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">Yatri Connect</string>
+    <string name="title_activity_find_guide">FindGuideActivity</string>
+    <string name="guide__name_placeholder">Guide Name</string>
+    <string name="google_maps_key">AIzaSyB7bi89pZj-68-X9sTH4GLdQB4J132QYLg</string>
+</resources>

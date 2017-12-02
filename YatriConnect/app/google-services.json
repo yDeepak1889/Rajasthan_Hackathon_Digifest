@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "235516453088",
+    "firebase_url": "https://saga-39285.firebaseio.com",
+    "project_id": "saga-39285",
+    "storage_bucket": "saga-39285.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:235516453088:android:aaa4c7ea642fe2c0",
+        "android_client_info": {
+          "package_name": "in.rehacktivebrains.yatriconnect"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "235516453088-ko6aou3vsha3s2jgmf3bebgu0vap59dr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBCUSYGM8ydv0Fw_lDkLm0t_FbDiEEHh4Y"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
