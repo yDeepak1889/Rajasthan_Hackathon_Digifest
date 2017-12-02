@@ -28,7 +28,7 @@ class BaseHandler(webapp2.RequestHandler):
 
 db = MySQLdb.connect(host="localhost",
                      user="root",
-                     passwd="dewan123",
+                     passwd="codebuildhack",
                      db="digifest")
 cs = db.cursor()
 
@@ -36,7 +36,48 @@ cs = db.cursor()
 class getUserId(BaseHandler):
 	def get(self):
 		beaconId = str(self.request.get('beaconId'))
+		print(beaconId)
+
+		if (beaconId == 'all'):
+			print('in all')
+			cs.execute('SELECT * FROM guide')
+			data = cs.fetchall()
+			print(data)
+			comp = []
+			
+			for a_data in data:
+				jsn = {}
 		
+				jsn['first_name'] = a_data[0]
+				jsn['last_name'] = a_data[1]
+				jsn['phone'] = a_data[2]
+				jsn['bhamashah'] = a_data[4]
+				jsn['age'] = a_data[5]
+				jsn['gender'] = a_data[6]
+
+				cs.execute('SELECT * FROM knowingPlaces WHERE userId="' + jsn['phone'] + '"')
+				data = cs.fetchall()
+				expertise = []
+				for xp in data:
+					expertise.append(xp[0])
+
+				# language table -> userId = lang
+				cs.execute('SELECT userId FROM language WHERE lang="' + jsn['phone'] + '"')
+				data = cs.fetchall()
+				languages = []
+				for xp in data:
+					languages.append(xp[0])
+
+				jsn['expertise'] = expertise
+				jsn['languages'] = languages
+
+				comp.append(jsn)
+
+			rslt = json.dumps(comp)
+			self.write(rslt)
+			return
+
+
 		cs.execute('SELECT * FROM guide WHERE beaconId="' + beaconId + '"')
 		data = cs.fetchone()
 		jsn = {}
@@ -105,6 +146,6 @@ app = webapp2.WSGIApplication([
 
 def main():
 	from paste import httpserver
-	httpserver.serve(app, host = '139.59.26.15', port = '8080')
+	httpserver.serve(app, host = '172.19.92.234', port = '8080')
 
 main()
