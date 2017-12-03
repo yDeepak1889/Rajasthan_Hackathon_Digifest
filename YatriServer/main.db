@@ -2,7 +2,7 @@
 --
 -- Host: localhost    Database: digifest
 -- ------------------------------------------------------
--- Server version	5.7.20-0ubuntu0.17.04.1
+-- Server version	5.7.20-0ubuntu0.16.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -41,8 +41,32 @@ CREATE TABLE `guide` (
 
 LOCK TABLES `guide` WRITE;
 /*!40000 ALTER TABLE `guide` DISABLE KEYS */;
-INSERT INTO `guide` VALUES ('deepak','yadav','9451571132','dewan','bhama4567',21,'F','B2234'),('aditya','dewan','9465344919','dewan','bhama1234',20,'M','B1234');
+INSERT INTO `guide` VALUES ('Pranjal','Paliwal','9041342475','paliwal123','bhama1234',22,'F','B2255'),('deepak','yadav','9451571132','dewan','bhama4567',21,'F','B2234'),('aditya','dewan','9465344919','dewan','bhama1234',20,'M','B1234');
 /*!40000 ALTER TABLE `guide` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `guideBasicinfo`
+--
+
+DROP TABLE IF EXISTS `guideBasicinfo`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `guideBasicinfo` (
+  `userId` varchar(50) NOT NULL,
+  `age` int(11) NOT NULL,
+  `gender` varchar(2) NOT NULL,
+  PRIMARY KEY (`userId`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `guideBasicinfo`
+--
+
+LOCK TABLES `guideBasicinfo` WRITE;
+/*!40000 ALTER TABLE `guideBasicinfo` DISABLE KEYS */;
+/*!40000 ALTER TABLE `guideBasicinfo` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -64,6 +88,7 @@ CREATE TABLE `knowingPlaces` (
 
 LOCK TABLES `knowingPlaces` WRITE;
 /*!40000 ALTER TABLE `knowingPlaces` DISABLE KEYS */;
+INSERT INTO `knowingPlaces` VALUES ('9041342475','Fateh Sagar Lake'),('9451571132','Doodh Talai Lake'),('9465344919','City Palace');
 /*!40000 ALTER TABLE `knowingPlaces` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,7 +111,7 @@ CREATE TABLE `language` (
 
 LOCK TABLES `language` WRITE;
 /*!40000 ALTER TABLE `language` DISABLE KEYS */;
-INSERT INTO `language` VALUES ('9465344919','Hindi'),('9465344919','English'),('9465344919','Punjabi'),('9465344919','Chinese'),('9465344919','Rajasthani');
+INSERT INTO `language` VALUES ('9465344919','Hindi'),('9465344919','English'),('9465344919','Punjabi'),('9465344919','Chinese'),('9465344919','Rajasthani'),('9465344919','French'),('9041342475','Italian'),('9451571132','Japanese');
 /*!40000 ALTER TABLE `language` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -121,4 +146,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-12-03  4:49:39
+-- Dump completed on 2017-12-03  5:40:38
